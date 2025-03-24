@@ -13,7 +13,7 @@
 
     # Gather info for selected units with extra properties.
     - name: Gather info for selected unit(s)
-      systemd_info:
+      community.general.systemd_info:
         unitname:
           - k3s.service
         extra_properties:
