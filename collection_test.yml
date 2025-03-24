@@ -3,7 +3,6 @@
   hosts: localhost
 
   tasks:
-
     - name: Run date command
       command: date
       register: curdate
