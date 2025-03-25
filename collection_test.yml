@@ -11,15 +11,20 @@
       debug:
         var: curdate
 
-    # Gather info for selected units with extra properties.
-    - name: Gather info for selected unit(s)
-      community.general.systemd_info:
-        unitname:
-          - k3s.service
-        extra_properties:
-          - Description
-      register: systemd_results
-      become: yes
+          #    # Gather info for selected units with extra properties.
+          #    - name: Gather info for selected unit(s)
+          #      community.general.systemd_info:
+          #        unitname:
+          #          - k3s.service
+          #        extra_properties:
+          #          - Description
+          #      register: systemd_results
+          #      become: yes
+
+    - name: Example playbook sending mail to root
+      community.general.mail:
+        subject: System {{ ansible_hostname }} mail test.
+      delegate_to: localhost
 
     - name: Debug systemd_results
       debug:
