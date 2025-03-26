@@ -24,6 +24,7 @@
     - name: Example playbook sending mail to root
       community.general.mail:
         subject: System {{ ansible_hostname }} mail test.
+        to: jtdudman@localhost
       delegate_to: localhost
 
     - name: Debug systemd_results
